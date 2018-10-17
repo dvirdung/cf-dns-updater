@@ -12,6 +12,16 @@ sudo systemctl enable cf-dns-updater.service
 sudo systemctl start cf-dns-updater.service
 ```
 
+### Flags
+
+```
+Usage of cf-dns-updater:
+  -config string
+    	location of the config file (default "config.json")
+  -log-level string
+    	log level (default "warning")
+```
+
 
 ### Configuration
 a json file that looks like this:
