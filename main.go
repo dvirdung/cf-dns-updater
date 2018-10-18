@@ -35,7 +35,7 @@ func main() {
 		logrus.SetLevel(lvl)
 		logrus.SetFormatter(&logrus.TextFormatter{FullTimestamp: true})
 	}
-	fmt.Println(GetOutboundIP())
+	fmt.Println("Current IP is:", GetOutboundIP())
 	config, err := loadConfig(*configLocation)
 	if err != nil {
 		log.Fatal(err)
