@@ -9,7 +9,7 @@ User=cloudflare
 Group=cloudflare
 Restart=always
 RestartSec=10
-ExecStart=/usr/local/bin/cf-dns-updater
+ExecStart=/usr/local/bin/cf-dns-updater -config /etc/cf-dns-updater.json
 
 [Install]
 WantedBy=multi-user.target

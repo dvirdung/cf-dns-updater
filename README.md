@@ -6,7 +6,12 @@ Updates cloudflare with servers public ip
 ```
 go get -u github.com/jonaz/cf-dns-updater
 sudo mv $GOPATH/bin/cf-dns-updater /usr/local/bin
-sudo cp cf-dns-updater.service /etc/systemd/system/
+
+curl -o /etc/systemd/system/cf-dns-updater.service https://raw.githubusercontent.com/jonaz/cf-dns-updater/master/cf-dns-updater.service
+
+sudo groupadd cloudflare
+sudo useradd -r -g cloudflare cloudflare
+
 sudo systemctl daemon-reload
 sudo systemctl enable cf-dns-updater.service
 sudo systemctl start cf-dns-updater.service
