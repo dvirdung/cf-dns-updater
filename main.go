@@ -91,7 +91,7 @@ func updateCloudFlare(api *cloudflare.API, domain string, ip net.IP) error {
 	if err != nil {
 		return err
 	}
-	foo := cloudflare.DNSRecord{Name: domain}
+	foo := cloudflare.DNSRecord{Name: domain, Type: "A"}
 	recs, err := api.DNSRecords(id, foo)
 	if err != nil {
 		return err
